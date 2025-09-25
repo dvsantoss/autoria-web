@@ -1,0 +1,34 @@
+<!--
+Crie um formulário simples com 4 botões e um parágrafo que, ao clicar em cada um, altere o
+texto do parágrafo para vermelho, verde, azul e amarelo, respectivamente.
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 1</title>
+</head>
+
+<body>
+
+    <form>
+        <button type="button" onclick="alterarCorParagrafo('green')">Verde</button>
+        <button type="button" onclick="alterarCorParagrafo('blue')">Azul</button>
+        <button type="button" onclick="alterarCorParagrafo('red')">Vermelho</button>
+        <button type="button" onclick="alterarCorParagrafo('yellow')">Amarelo</button>
+    </form>
+
+    <p id="paragrafo">Cor do Texto</p>
+
+    <script>
+        function alterarCorParagrafo(cor) {
+            document.getElementById("paragrafo").style.color = cor;
+        }
+    </script>
+
+</body>
+
+</html>
