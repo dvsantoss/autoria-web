@@ -1,6 +1,11 @@
 <!--
 5)  Crie  um formulário com os campos para cadastrar o usuário de  um sistema (login, senha e 
-confirmar senha).
+confirmar senha)
+
+Valide se todos os campos estiverem preenchidos, se os campos senha e confirma senha forem 
+iguais e a senha possuir entre 6 e 10 caracteres.
+
+Envie um alerta (alert) com a resposta.
 -->
 <!DOCTYPE html>
 <html lang="pt">
@@ -24,11 +29,17 @@ confirmar senha).
 
             const senha = document.getElementById("senha").value
             const confirmarSenha = document.getElementById("confirmarSenha").value
+            const login = document.getElementById("login").value
 
-            if (senha === confirmarSenha) {
+            if (login === "" || senha === "" || confirmarSenha === "") {
+                alert("Preecha todos os campos!")
+                return // necessário para nao continuar executando o resto do codigo
+            }
+
+            if (senha === confirmarSenha && senha.length >= 6 && senha.length <= 10) {
                 alert("Enviado com sucesso")
             } else {
-                alert("As senhas não são equivalentes")
+                alert("As senhas não são equivalentes ou não possuem entre 6 a 10 caracteres")
             }
         }
     </script>
