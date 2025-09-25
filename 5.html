@@ -1,0 +1,37 @@
+<!--
+5)  Crie  um formulário com os campos para cadastrar o usuário de  um sistema (login, senha e 
+confirmar senha).
+-->
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 5</title>
+</head>
+
+<body>
+    <form>
+        <input id="login" type="text" placeholder="seu login">
+        <input id="senha" type="password" placeholder="sua senha">
+        <input id="confirmarSenha" type="password" placeholder="confirme a sua senha">
+        <button onclick="validarSenha()" type="button">Enviar</button>
+    </form>
+    <script>
+
+        function validarSenha() {
+
+            const senha = document.getElementById("senha").value
+            const confirmarSenha = document.getElementById("confirmarSenha").value
+
+            if (senha === confirmarSenha) {
+                alert("Enviado com sucesso")
+            } else {
+                alert("As senhas não são equivalentes")
+            }
+        }
+    </script>
+</body>
+
+</html>
