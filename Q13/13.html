@@ -1,11 +1,46 @@
+<!--
+13)  Faça um script que receba uma data no formato “dd/mm/aaaa” e escreva a data por 
+extenso. Dica: use a função “split” de uma string que quebra a string em pedaços dado um 
+separador como argumento da função. Nesse caso, o separador é a barra (/) da data. Exemplo: 
+Para a entrada “06/09/2024” deve ser escrito “06 de setembro de 2024”.
+-->
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atividade 13</title>
 </head>
+
 <body>
-    
+    <p>Escreva uma data</p>
+    <input type="text" id="data">
+    <button onclick="imprimirData()">Enviar</button>
+    <p id="resposta"></p>
+    <script>
+        function imprimirData() {
+            let resposta = document.getElementById("resposta");
+            let data = document.getElementById("data").value;
+            let splitData = data.split('/');
+
+            splitData[1] = parseInt(splitData[1], 10);
+
+            const meses = ["janeiro", "fevereiro", "março", "abril", "maio", "junho",
+                "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"];
+
+            let dia = splitData[0];
+            let mes = parseInt(splitData[1], 10);
+            let ano = splitData[2];
+
+            if (mes >= 1 && mes <= 12) {
+                resposta.innerHTML = `${dia} de ${meses[mes - 1]} de ${ano}`;
+            } else {
+                resposta.innerHTML = "Data inválida";
+            }
+        }
+
+    </script>
 </body>
+
 </html>
