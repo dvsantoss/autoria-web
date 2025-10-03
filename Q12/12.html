@@ -34,18 +34,20 @@ abaixo do campo de texto indicando que a busca não retornou nenhum resultado.
             event.preventDefault(); // para tirar o comportamento padrão do form de atualizar a página
             
             let paragrafo = document.getElementById("textoParagrafo"); // paragrafo
-            let textoParagrafo = paragrafo.innerHTML; // conteudo do paragrafo
+            let textoParagrafo = (paragrafo.innerHTML); // conteudo do paragrafo
 
-            let palavra = document.getElementById("palavra").value; // palavra
-
+            let palavra = (document.getElementById("palavra").value); // palavra
+            
+            let TirarCaseSensitive = new RegExp(palavra, "gi");
             // colocando em minusculas para reconhecer tanto maiusculas quanto em minusculas
 
             // let textoParagrafoLower = textoParagrafo;
             // let palavraLower = palavra;
 
             let novoTextoParagrafo = textoParagrafo.replaceAll( // replace pega a primeira palavra e replace all pega todas
-                palavra,
-                `<span style="background-color: yellow;">${palavra}</span>`
+                TirarCaseSensitive, (match) => {
+                  return  `<span style="background-color: yellow;">${match}</span>`
+                }
             );
 
             paragrafo.innerHTML = novoTextoParagrafo; // aplica no paragrafo
