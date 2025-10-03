@@ -1,13 +1,18 @@
-function reverter(){
-    let nome1 = (document.getElementById("nome1").value).split("").reverse().join("");
-    let nome2 = (document.getElementById("nome2").value).split("").reverse().join("");
-    let nome3 = (document.getElementById("nome3").value).split("").reverse().join("");
-    let nome4 = (document.getElementById("nome4").value).split("").reverse().join("");
-    let nome5 = (document.getElementById("nome5").value).split("").reverse().join("");
+function reverter() {
 
-    document.getElementById("nome1").value=nome1;
-    document.getElementById("nome2").value=nome1;
-    document.getElementById("nome3").value=nome1;
-    document.getElementById("nome4").value=nome1;
-    document.getElementById("nome5").value=nome1;
+    let nomes = [
+        document.getElementById("nome1").value,
+        document.getElementById("nome2").value,
+        document.getElementById("nome3").value,
+        document.getElementById("nome4").value,
+        document.getElementById("nome5").value
+    ];
+
+    nomes.reverse(); // invertendo ordem
+
+    document.getElementById("nome1").value = nomes[0];
+    document.getElementById("nome2").value = nomes[1];
+    document.getElementById("nome3").value = nomes[2];
+    document.getElementById("nome4").value = nomes[3];
+    document.getElementById("nome5").value = nomes[4];
 }
